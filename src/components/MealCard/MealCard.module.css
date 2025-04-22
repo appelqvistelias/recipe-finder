@@ -1,0 +1,16 @@
+.mealCard {
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: aqua;
+    width: 25rem;
+    height: 25rem;
+    padding: 1rem;
+
+}
+
+.mealCard h2 {
+
+    font-size: 5rem;
+}
