@@ -1,15 +1,8 @@
 import "./App.css";
-import Button from "./components/Button/Button";
+import RecipeSearch from "./components/RecipeSearch/RecipeSearch";
 
 function App() {
-  return (
-    <Button
-      title="Click me!"
-      onClick={() => {
-        alert("Hello there!");
-      }}
-    />
-  );
+  return <RecipeSearch />;
 }
 
 export default App;
