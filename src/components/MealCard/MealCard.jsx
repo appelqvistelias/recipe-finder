@@ -13,9 +13,10 @@ export default function MealCard({ meal }) {
         <section className={styles.mealInfo}>
           <h2>{meal.label}</h2>
           <p>{meal.dietLabels.join(", ")}</p>
-           <Button
+           {/* <Button
                   title="Show recipe"
-                />
+                  
+                /> */}
           
         </section>
       </section>

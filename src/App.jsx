@@ -20,9 +20,9 @@ function App() {
           alert("Hello there!");
         }}
       />
-      <div>
+      <section className='cardContainer'>
         <MealCard meal={dummyMeal} />
-      </div>
+      </section>
     </div>
   );
 }
