@@ -6,6 +6,7 @@
     background-color: aqua;
     padding: 1.5rem;
     border-radius: 1rem;
+    justify-content: center;
 
 }
 
@@ -21,9 +22,36 @@
     font-size: 2rem;
 }
 
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    
+
+    
+}
+
 .imgContainer img {
 
     width: 100%;
+    border-radius: 1rem;
+
 
 }
 
+@media (min-width: 768px) {
+
+    .mealCard {
+
+        
+        flex-direction: row;
+        justify-content: space-between;
+       
+
+    }
+
+    .mealInfo {
+
+        justify-content: center
+    }
+
+}
