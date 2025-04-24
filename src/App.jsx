@@ -1,8 +1,16 @@
-import "./App.css";
-import RecipeSearch from "./components/RecipeSearch/RecipeSearch";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import RecipePage from "./pages/RecipePage";
 
 function App() {
-  return <RecipeSearch />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recept" element={<RecipePage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
