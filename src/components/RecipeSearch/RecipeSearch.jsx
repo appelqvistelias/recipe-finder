@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchRecipes } from "../../api/fetchRecipes";
 
 export default function RecipeSearch() {
@@ -13,6 +14,12 @@ export default function RecipeSearch() {
     setLoading(false);
   };
 
+  const navigate = useNavigate();
+
+  const handleRecipeClick = (recipe) => {
+    navigate("/recipe", { state: { recipe } });
+  };
+
   return (
     <div>
       <h1>Recipe Finder</h1>
@@ -23,20 +30,19 @@ export default function RecipeSearch() {
         placeholder="Type ingredient, ex chicken"
         aria-label="Find recipe"
       />
-      <button onClick={handleSearch}>Sök</button>
+      <button onClick={handleSearch}>Search</button>
 
       {loading && <p>Loading...</p>}
 
       <ul>
         {recipes.map((recipe) => (
-          <li key={recipe.uri}>
+          <li
+            key={recipe.uri}
+            onClick={() => handleRecipeClick(recipe)}
+            style={{ cursor: "pointer" }}
+          >
             <h2>{recipe.label}</h2>
             <img src={recipe.image} alt={recipe.label} width="100" />
-            <p>
-              <a href={recipe.url} target="_blank" rel="noreferrer">
-                Show recipe
-              </a>
-            </p>
           </li>
         ))}
       </ul>
