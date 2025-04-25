@@ -1,7 +1,7 @@
 import RecipeSearch from "../components/RecipeSearch/RecipeSearch";
 
-function Home() {
+function HomePage() {
   return <RecipeSearch />;
 }
 
-export default Home;
+export default HomePage;
