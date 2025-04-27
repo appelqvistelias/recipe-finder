@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function unitConverter(fromUnit, toUnit, amount) {
+function unitConverter(fromUnit, amount) {
   const conversions = {
     cup: 2.4, // 1 cup = 2.4 dl
     tbsp: 15, // 1 tbsp = 15 ml
@@ -10,29 +10,21 @@ function unitConverter(fromUnit, toUnit, amount) {
     inch: 2.54, // 1 inch = 2.54 cm
   };
 
-  if (fromUnit === "cup" && toUnit === "dl") {
-    return (amount * conversions["cup"]).toFixed(1) + " dl";
-  }
-  if (fromUnit === "tbsp" && toUnit === "ml") {
-    return (amount * conversions["tbsp"]).toFixed(0) + " ml";
-  }
-  if (fromUnit === "oz" && toUnit === "g") {
-    return (amount * conversions["oz"]).toFixed(0) + " g";
-  }
-  if (fromUnit === "lb" && toUnit === "kg") {
-    return (amount * conversions["lb"]).toFixed(2) + " kg";
-  }
-  if (fromUnit === "inch" && toUnit === "cm") {
-    return (amount * conversions["inch"]).toFixed(2) + " cm";
-  }
+  const result = {
+    cup: (amount * conversions["cup"]).toFixed(1) + " dl",
+    tbsp: (amount * conversions["tbsp"]).toFixed(0) + " ml",
+    tsp: (amount * conversions["tsp"]).toFixed(0) + " ml",
+    oz: (amount * conversions["oz"]).toFixed(0) + " g",
+    lb: (amount * conversions["lb"]).toFixed(2) + " kg",
+    inch: (amount * conversions["inch"]).toFixed(2) + " cm",
+  };
 
-  return amount + " " + fromUnit;
+  return result[fromUnit] || amount + " " + fromUnit;
 }
 
 function UnitConverter() {
   const [amount, setAmount] = useState("");
   const [fromUnit, setFromUnit] = useState("cup");
-  const [toUnit, setToUnit] = useState("dl");
   const [convertedAmount, setConvertedAmount] = useState("");
   const [error, setError] = useState("");
 
@@ -50,16 +42,13 @@ function UnitConverter() {
     setFromUnit(e.target.value);
   };
 
-  const handleToUnitChange = (e) => {
-    setToUnit(e.target.value);
-  };
-
   const handleConvert = () => {
     if (amount === "" || isNaN(amount) || parseFloat(amount) <= 0) {
       setError("Please enter a valid amount greater than zero.");
+      setConvertedAmount("");
       return;
     }
-    const result = unitConverter(fromUnit, toUnit, parseFloat(amount));
+    const result = unitConverter(fromUnit, parseFloat(amount));
     setConvertedAmount(result);
   };
 
@@ -87,20 +76,6 @@ function UnitConverter() {
           <option value="oz">Ounce (oz)</option>
           <option value="lb">Pound (lb)</option>
           <option value="inch">Inch (in)</option>
-        </select>
-        <span> to </span>
-        <label htmlFor="toUnit">To unit</label>
-        <select
-          id="toUnit"
-          value={toUnit}
-          onChange={handleToUnitChange}
-          aria-label="Select the unit to convert to"
-        >
-          <option value="dl">Deciliter (dl)</option>
-          <option value="ml">Milliliter (ml)</option>
-          <option value="g">Gram (g)</option>
-          <option value="kg">Kilogram (kg)</option>
-          <option value="cm">Centimeter (cm)</option>
         </select>
       </div>
       <button onClick={handleConvert} aria-label="Convert the entered amount">
