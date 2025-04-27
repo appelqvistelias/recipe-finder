@@ -6,6 +6,13 @@
   border: solid 0.8rem;
 }
 
+.nutrients {
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .tagsContainer {
 
   margin-top: 1rem;
@@ -32,6 +39,7 @@
 .recipeImg {
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
   
 }
 
@@ -128,6 +136,7 @@
   .recipeImg {
 
     width: 50%;
+    
   }
 
   .innerContainer {
