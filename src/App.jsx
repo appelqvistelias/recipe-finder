@@ -1,29 +1,16 @@
-import "./App.css";
-import Button from "./components/Button/Button";
-import MealCard from "./components/MealCard/MealCard";
-import placeholderImage from "./assets/images/placeholder.png";
 
-const dummyMeal = {
-  label: "Vegetarisk currygryta",
-  image: placeholderImage,
-  dietLabels: ["Vegetarian", "Low-Fat"],
-  url: "https://example.com/recept"
-};
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import RecipePage from "./pages/RecipePage";
 
 function App() {
   return (
-    <div>
-      <Button
-        title="Click me!"
-        onClick={() => {
-          alert("Hello there!");
-        }}
-      />
-      <section className='cardContainer'>
-        <MealCard meal={dummyMeal} />
-      </section>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recipe" element={<RecipePage />} />
+      </Routes>
+    </Router>
   );
 }
 
