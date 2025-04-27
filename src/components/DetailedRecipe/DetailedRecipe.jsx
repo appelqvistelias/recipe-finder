@@ -34,25 +34,25 @@ export default function DetailedRecipe({ recipe }) {
          
           <section className={styles.recipeInfoWrapper}>
           <div className={styles.recipeInfo}>
-            <p>
-              Cuisine Type:{" "}
-              {recipe.cuisineType
-                ?.map((type) => capitalizeFirstLetter(type))
-                .join(", ")}
-            </p>
-            <p>
-              Meal Type:{" "}
-              {recipe.mealType
-                ?.map((type) => capitalizeFirstLetter(type))
-                .join(", ")}
-            </p>
-            <div className={styles.yieldAndTime}>
-              <p>Yield: {recipe.yield} people</p>
-              {recipe.totalTime && recipe.totalTime > 0 ? (
-                <p>Time: {recipe.totalTime} min</p>
-              ) : null}
-            </div>
-          </div>
+    <p>
+      <strong>Cuisine Type:</strong>{" "}
+      {recipe.cuisineType
+        ?.map((type) => capitalizeFirstLetter(type))
+        .join(", ")}
+    </p>
+    <p>
+      <strong>Meal Type:</strong>{" "}
+      {recipe.mealType
+        ?.map((type) => capitalizeFirstLetter(type))
+        .join(", ")}
+    </p>
+    <div className={styles.yieldAndTime}>
+      <p><strong>Yield:</strong> {recipe.yield} people</p>
+      {recipe.totalTime && recipe.totalTime > 0 ? (
+        <p><strong>Time:</strong> {recipe.totalTime} min</p>
+      ) : null}
+    </div>
+  </div>
           <h2>Ingredients</h2>
           <a
             href={recipe.url}
@@ -77,8 +77,8 @@ export default function DetailedRecipe({ recipe }) {
                 const nutrient = recipe.totalNutrients[key];
                 return nutrient ? (
                   <p key={key}>
-                    {nutrient.label}: {Math.round(nutrient.quantity)}{" "}
-                    {nutrient.unit}
+                  <strong>{nutrient.label}:</strong> {Math.round(nutrient.quantity)}{" "}
+                  {nutrient.unit}
                   </p>
                 ) : null;
               })}
