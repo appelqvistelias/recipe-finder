@@ -2,11 +2,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: maroon;
 }
 
 .wrapper {
   padding: 1rem;
   background-color: bisque;
+}
+
+.healthLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.healthLabelTag {
+  padding: 0.5rem 1rem;
+  background-color: rgb(200, 200, 200);
+  border: 0.5px solid black;
+  border-radius: 1rem;
 }
