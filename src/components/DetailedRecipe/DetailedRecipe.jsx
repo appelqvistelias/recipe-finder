@@ -1,5 +1,6 @@
 import styles from "./DetailedRecipe.module.css";
 import UnitConverter from "../UnitConverter/UnitConverter";
+import Button from "../Button/Button";
 
 export default function DetailedRecipe({ recipe }) {
   const capitalizeFirstLetter = (str) => {
@@ -13,14 +14,16 @@ export default function DetailedRecipe({ recipe }) {
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
         <div className={styles.wrapper}>
-          <button
-            className={styles.backButton}
-            onClick={() => (window.location.href = "/")}
-            aria-label="Back to home page"
-          >
-            Back
-          </button>
-          <h1>{recipe.label}</h1>
+        <Button 
+          variant="return"  
+          onClick={() => (window.location.href = "/")}
+          aria-label="Back to home page"
+        >
+          Back
+        </Button>
+        <div className={styles.recipeHeader}>
+          <h2>{recipe.label}</h2>
+          </div>
           <div className={styles.recipeInfo}>
             <p>
               Cuisine Type:{" "}
