@@ -38,7 +38,7 @@ export default function RecipeSearch() {
           placeholder="Type ingredient, ex chicken"
           aria-label="Find recipe"
         />
-        <Button title="Search" onClick={handleSearch} />
+        <Button title="search" onClick={handleSearch} />
         </div>
 
         {loading && <p>Loading...</p>}

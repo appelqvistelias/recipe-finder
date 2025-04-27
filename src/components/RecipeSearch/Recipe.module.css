@@ -12,23 +12,21 @@
    
 }
 
-.searchContainer h1 {
+.title h1 {
 
    
-    font-weight: 900;
-    background: var(--main-bg-color);
-
-   
-    
-    
+    font-weight: 900; 
 }
 
-.searchHeader {
+.title {
     display: flex;
     border: solid 1rem;
     border-color: var(--main-accent-color);
-    padding: 1rem;
+    padding: 0.75rem;
     margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    
   
 }
 
@@ -49,8 +47,6 @@
     flex-direction: row;
     gap: 0.5rem;
    
-    
-
 }
 
 .mealCardGrid {
@@ -64,11 +60,13 @@
 
 @media (min-width: 769px) {
 
-    .searchHeader {
+    .title{
        
         border: solid 1.5rem;
-        
+       
+        border-color: var(--main-accent-color);
         padding: 1rem;
+        font-size: 5rem;
         
       
     }
