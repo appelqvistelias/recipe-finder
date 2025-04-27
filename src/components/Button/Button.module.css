@@ -6,6 +6,7 @@
   padding: 0.5rem 0.5rem;
   border: none;
   cursor: pointer;
+  border: solid 3px var(--main-typography-color);
   
 }
 

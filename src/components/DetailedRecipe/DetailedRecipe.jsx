@@ -15,9 +15,10 @@ export default function DetailedRecipe({ recipe }) {
       <div className={styles.innerContainer}>
         <div className={styles.wrapper}>
         <Button 
-          variant="return"  
           onClick={() => (window.location.href = "/")}
           aria-label="Back to home page"
+          title="back"
+
         >
           Back
         </Button>
