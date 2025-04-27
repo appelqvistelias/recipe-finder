@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchRecipes } from "../../api/fetchRecipes";
 import MealCard from "../MealCard/MealCard";
 import styles from './Recipe.module.css';
+import Button from "../Button/Button";
 
 export default function RecipeSearch() {
   const [query, setQuery] = useState("");
@@ -28,13 +29,14 @@ export default function RecipeSearch() {
         <h1>Recipe Finder</h1>
         <div className={styles.inputContainer}>
         <input
+        className={styles.searchInput}
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Type ingredient, ex chicken"
           aria-label="Find recipe"
         />
-        <button onClick={handleSearch}>Search</button>
+        <Button title="Search" onClick={handleSearch} />
         </div>
 
         {loading && <p>Loading...</p>}

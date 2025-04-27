@@ -4,8 +4,27 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 2rem;
+    
+   
 }
 
+.searchInput {
+
+    
+    display: flex;
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+
+    
+    
+}
+.inputContainer {
+
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+}
 
 .mealCardGrid {
 

@@ -22,7 +22,7 @@ export default function MealCard({ recipe }) {
           <p>{recipe.dietLabels.join(", ")}</p>
         )}
 
-        {/* <Button title="Show recipe" /> */}
+       
       </section>
     </section>
   );
