@@ -1,6 +1,6 @@
 import styles from "./DetailedRecipe.module.css";
 
-function convertUnits(unit, amount) {
+function unitConverter(unit, amount) {
   switch (unit?.toLowerCase()) {
     case "cup":
       return `${(amount * 2.4).toFixed(1)} dl`;
