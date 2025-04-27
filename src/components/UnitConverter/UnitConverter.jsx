@@ -40,6 +40,9 @@ function UnitConverter() {
 
   const handleFromUnitChange = (e) => {
     setFromUnit(e.target.value);
+    setAmount("");
+    setConvertedAmount("");
+    setError("");
   };
 
   const handleConvert = () => {
