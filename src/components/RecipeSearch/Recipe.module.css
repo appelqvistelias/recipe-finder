@@ -34,10 +34,11 @@
 }
 
 .mealCardGrid {
-
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
-    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
 }
 
 @media (min-width: 769px) {
