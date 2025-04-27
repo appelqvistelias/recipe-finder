@@ -38,7 +38,7 @@
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 1rem;
     width: 100%;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 @media (min-width: 769px) {
