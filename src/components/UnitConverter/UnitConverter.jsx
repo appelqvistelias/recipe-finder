@@ -30,9 +30,16 @@ function UnitConverter() {
   const [fromUnit, setFromUnit] = useState("cup");
   const [toUnit, setToUnit] = useState("dl");
   const [convertedAmount, setConvertedAmount] = useState("");
+  const [error, setError] = useState("");
 
   const handleAmountChange = (e) => {
-    setAmount(e.target.value);
+    const value = e.target.value;
+    if (value === "" || !isNaN(value)) {
+      setAmount(value);
+      setError("");
+    } else {
+      setError("Please enter a valid number");
+    }
   };
 
   const handleFromUnitChange = (e) => {
@@ -44,6 +51,10 @@ function UnitConverter() {
   };
 
   const handleConvert = () => {
+    if (amount === "" || isNaN(amount) || parseFloat(amount) <= 0) {
+      setError("Please enter a valid amount greater than zero.");
+      return;
+    }
     const result = unitConverter(fromUnit, toUnit, parseFloat(amount));
     setConvertedAmount(result);
   };
@@ -73,7 +84,8 @@ function UnitConverter() {
       </div>
       <button onClick={handleConvert}>Convert</button>
       <div>
-        {convertedAmount && (
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {convertedAmount && !error && (
           <p>
             {amount} {fromUnit} is {convertedAmount}.
           </p>
