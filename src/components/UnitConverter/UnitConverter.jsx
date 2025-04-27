@@ -32,6 +32,7 @@ function UnitConverter() {
     const value = e.target.value;
     if (value === "" || !isNaN(value)) {
       setAmount(value);
+      setConvertedAmount("");
       setError("");
     } else {
       setError("Please enter a valid number");
