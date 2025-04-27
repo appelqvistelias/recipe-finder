@@ -29,6 +29,20 @@ export default function DetailedRecipe({ recipe }) {
             <li key={index}>{line}</li>
           ))}
         </ul>
+        {recipe.totalNutrients && (
+          <div className={styles.nutrients}>
+            <h2>Nutrients</h2>
+            {["CHOCDF", "PROCNT", "FAT"].map((key) => {
+              const nutrient = recipe.totalNutrients[key];
+              return nutrient ? (
+                <p key={key}>
+                  {nutrient.label}: {Math.round(nutrient.quantity)}{" "}
+                  {nutrient.unit}
+                </p>
+              ) : null;
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
