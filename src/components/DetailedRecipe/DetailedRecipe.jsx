@@ -47,11 +47,12 @@ export default function DetailedRecipe({ recipe }) {
               <li key={index}>{line}</li>
             ))}
           </ul>
+          <h3>Unit Converter</h3>
           <UnitConverter />
 
           {recipe.totalNutrients && (
             <div className={styles.nutrients}>
-              <h2>Nutrients</h2>
+              <h3>Nutrients</h3>
               {["CHOCDF", "PROCNT", "FAT"].map((key) => {
                 const nutrient = recipe.totalNutrients[key];
                 return nutrient ? (
@@ -63,7 +64,7 @@ export default function DetailedRecipe({ recipe }) {
               })}
             </div>
           )}
-          <h2>Tags</h2>
+          <h3>Tags</h3>
           <div className={styles.healthLabels}>
             {recipe.healthLabels?.map((label, index) => (
               <p key={index} className={styles.healthLabelTag}>
