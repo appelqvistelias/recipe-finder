@@ -8,6 +8,7 @@
     border-radius: 1rem;
     
     color: var(--secondary-typography-color);
+    min-height: 40rem;
     
 
 }
@@ -22,12 +23,13 @@
 
 .mealCard h2 {
 
-    font-size: 1rem;
+    font-size: 1.9rem;
 }
 
 .imgContainer {
     display: flex;
     justify-content: center;
+    padding: 2rem;
     
 }
 
@@ -38,6 +40,8 @@
     /* border-radius: 1rem; */
     object-fit: cover;
 }
+
+
 
 .infoLabel {
 
