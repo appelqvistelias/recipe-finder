@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchRecipes } from "../../api/fetchRecipes";
+import MealCard from "../MealCard/MealCard";
 
 export default function RecipeSearch() {
   const [query, setQuery] = useState("");
@@ -34,18 +35,17 @@ export default function RecipeSearch() {
 
       {loading && <p>Loading...</p>}
 
-      <ul>
-        {recipes.map((recipe) => (
-          <li
-            key={recipe.uri}
-            onClick={() => handleRecipeClick(recipe)}
-            style={{ cursor: "pointer" }}
-          >
-            <h2>{recipe.label}</h2>
-            <img src={recipe.image} alt={recipe.label} width="100" />
-          </li>
-        ))}
-      </ul>
+      <div>
+  {recipes.map((recipe) => (
+    <div 
+      key={recipe.uri} 
+      onClick={() => handleRecipeClick(recipe)} 
+      style={{ cursor: "pointer" }}
+    >
+      <MealCard recipe={recipe} />
+    </div>
+  ))}
+</div>
     </div>
   );
 }
