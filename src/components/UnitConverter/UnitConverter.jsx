@@ -50,7 +50,6 @@ function UnitConverter() {
 
   return (
     <div>
-      <h2>Unit Converter</h2>
       <div>
         <input
           type="number"
