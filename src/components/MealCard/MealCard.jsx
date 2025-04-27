@@ -15,15 +15,19 @@ export default function MealCard({ recipe }) {
           className={styles.mealImage} 
         />
       </div>
-      <section className={styles.mealInfo}>
+      <div className={styles.mealInfo}>
         <h2>{recipe.label}</h2>
 
         {recipe.dietLabels && recipe.dietLabels.length > 0 && (
-          <p>{recipe.dietLabels.join(", ")}</p>
+          <p><span className={styles.infoLabel}>Diet:</span> {recipe.dietLabels.join(", ")}</p>
+        )}
+        
+        {recipe.cautions && recipe.cautions.length > 0 && (
+          <p><span className={styles.infoLabel}>Allergens:</span> {recipe.cautions.join(", ")}</p>
         )}
 
        
-      </section>
+      </div>
     </section>
   );
 }
