@@ -4,8 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
 
-  padding: 1.5rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.6rem; /* 16px font-size standard */
 }
