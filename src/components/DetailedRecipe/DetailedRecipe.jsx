@@ -28,7 +28,9 @@ export default function DetailedRecipe({ recipe }) {
           </p>
           <div className={styles.yieldAndTime}>
             <p>Yield: {recipe.yield} people</p>
-            <p>Time: {recipe.totalTime} min</p>
+            {recipe.totalTime && recipe.totalTime > 0 ? (
+              <p>Time: {recipe.totalTime} min</p>
+            ) : null}
           </div>
         </div>
         <img src={recipe.image} alt={recipe.label} />
