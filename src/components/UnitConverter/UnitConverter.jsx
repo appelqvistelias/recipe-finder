@@ -7,6 +7,7 @@ function unitConverter(fromUnit, toUnit, amount) {
     tsp: 5, // 1 tsp = 5 ml
     oz: 28.35, // 1 oz = 28.35 g
     lb: 0.45, // 1 lb = 0.45 kg
+    inch: 2.54, // 1 inch = 2.54 cm
   };
 
   if (fromUnit === "cup" && toUnit === "dl") {
@@ -20,6 +21,9 @@ function unitConverter(fromUnit, toUnit, amount) {
   }
   if (fromUnit === "lb" && toUnit === "kg") {
     return (amount * conversions["lb"]).toFixed(2) + " kg";
+  }
+  if (fromUnit === "inch" && toUnit === "cm") {
+    return (amount * conversions["inch"]).toFixed(2) + " cm";
   }
 
   return amount + " " + fromUnit;
@@ -82,6 +86,7 @@ function UnitConverter() {
           <option value="tbsp">Tablespoon (tbsp)</option>
           <option value="oz">Ounce (oz)</option>
           <option value="lb">Pound (lb)</option>
+          <option value="inch">Inch (in)</option>
         </select>
         <span> to </span>
         <label htmlFor="toUnit">To unit</label>
@@ -95,6 +100,7 @@ function UnitConverter() {
           <option value="ml">Milliliter (ml)</option>
           <option value="g">Gram (g)</option>
           <option value="kg">Kilogram (kg)</option>
+          <option value="cm">Centimeter (cm)</option>
         </select>
       </div>
       <button onClick={handleConvert} aria-label="Convert the entered amount">
