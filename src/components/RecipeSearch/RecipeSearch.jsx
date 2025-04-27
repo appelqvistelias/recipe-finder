@@ -25,6 +25,7 @@ export default function RecipeSearch() {
 
   return (
     <div>
+      <main>
         <div className={styles.title}>
         <h1>recipe finder</h1>
         </div>
@@ -55,6 +56,7 @@ export default function RecipeSearch() {
           </div>
         ))}
       </section>
+      </main>
     </div>
   );
 }
