@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchRecipes } from "../../api/fetchRecipes";
+import MealCard from "../MealCard/MealCard";
+import styles from './Recipe.module.css';
+import Button from "../Button/Button";
 
 export default function RecipeSearch() {
   const [query, setQuery] = useState("");
@@ -22,30 +25,34 @@ export default function RecipeSearch() {
 
   return (
     <div>
-      <h1>Recipe Finder</h1>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Type ingredient, ex chicken"
-        aria-label="Find recipe"
-      />
-      <button onClick={handleSearch}>Search</button>
+      <section className={styles.searchContainer}>
+        <h1>recipe finder</h1>
+        <div className={styles.inputContainer}>
+        <input
+        className={styles.searchInput}
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Type ingredient, ex chicken"
+          aria-label="Find recipe"
+        />
+        <Button title="Search" onClick={handleSearch} />
+        </div>
 
-      {loading && <p>Loading...</p>}
-
-      <ul>
+        {loading && <p>Loading...</p>}
+      </section>
+      
+      <section className={styles.mealCardGrid}>
         {recipes.map((recipe) => (
-          <li
-            key={recipe.uri}
-            onClick={() => handleRecipeClick(recipe)}
+          <div 
+            key={recipe.uri} 
+            onClick={() => handleRecipeClick(recipe)} 
             style={{ cursor: "pointer" }}
           >
-            <h2>{recipe.label}</h2>
-            <img src={recipe.image} alt={recipe.label} width="100" />
-          </li>
+            <MealCard recipe={recipe} />
+          </div>
         ))}
-      </ul>
+      </section>
     </div>
   );
 }
