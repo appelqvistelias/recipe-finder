@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: #154388;
+    background: var(--main-accent-color);
     padding: 1.2rem;
     border-radius: 1rem;
     
-    color: white;
+    color: var(--secondary-typography-color);
     
 
 }

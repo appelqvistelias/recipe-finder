@@ -25,8 +25,10 @@ export default function RecipeSearch() {
 
   return (
     <div>
-      <section className={styles.searchContainer}>
+        <div className={styles.title}>
         <h1>recipe finder</h1>
+        </div>
+      <section className={styles.searchContainer}>
         <div className={styles.inputContainer}>
         <input
         className={styles.searchInput}
