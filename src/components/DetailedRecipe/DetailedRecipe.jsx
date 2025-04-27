@@ -21,9 +21,12 @@ export default function DetailedRecipe({ recipe }) {
         >
           Back
         </Button>
+
         <div className={styles.recipeHeader}>
           <h2>{recipe.label}</h2>
           </div>
+          <div className={styles.recipeContentWrapper}>
+          <section className={styles.recipeInfoWrapper}>
           <div className={styles.recipeInfo}>
             <p>
               Cuisine Type:{" "}
@@ -47,6 +50,8 @@ export default function DetailedRecipe({ recipe }) {
           <div className={styles.recipeImg}>
             <img src={recipe.image} alt={`Image of ${recipe.label}`} />
           </div>
+          </section>
+          <section className={styles.recipeInfoWrapper}>
           <h2>Ingredients</h2>
           <a
             href={recipe.url}
@@ -78,6 +83,8 @@ export default function DetailedRecipe({ recipe }) {
               })}
             </div>
           )}
+          </section>
+          </div>
           <h3>Tags</h3>
           <div className={styles.healthLabels}>
             {recipe.healthLabels?.map((label, index) => (
@@ -88,6 +95,8 @@ export default function DetailedRecipe({ recipe }) {
           </div>
         </div>
       </div>
+      
     </div>
+    
   );
 }

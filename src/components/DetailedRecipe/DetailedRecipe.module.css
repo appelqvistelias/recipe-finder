@@ -11,9 +11,18 @@
 }
 
 .wrapper {
-  padding: 2rem;
+  padding: 0.5rem;
   
 }
+
+.recipeContentWrapper {
+
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
 
 .recipeImg {
   display: flex;
@@ -24,6 +33,7 @@
 .recipeHeader {
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
     
     
 }
@@ -67,5 +77,27 @@
 
     font-size: 8rem;
   }
+
+  .recipeInfoWrapper {
+
+    width: 50%;
+  
+  }
+
+  .innerContainer {
+    width: 100%;
+  }
+
+  .wrapper {
+
+    padding: 2rem;
+  }
+
+  .recipeHeader {
+    
+    margin-bottom: 4rem;
+    
+    
+}
 
 }
