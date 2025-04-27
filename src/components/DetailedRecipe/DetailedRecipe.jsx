@@ -2,15 +2,32 @@ import styles from "./DetailedRecipe.module.css";
 import UnitConverter from "../UnitConverter/UnitConverter";
 
 export default function DetailedRecipe({ recipe }) {
+  const capitalizeFirstLetter = (str) => {
+    return str
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <h1>{recipe.label}</h1>
         <div className={styles.recipeInfo}>
-          <p>Cuisine Type: {recipe.cuisineType?.join(", ")}</p>
-          <p>Meal Type: {recipe.mealType?.join(", ")}</p>
+          <p>
+            Cuisine Type:{" "}
+            {recipe.cuisineType
+              ?.map((type) => capitalizeFirstLetter(type))
+              .join(", ")}
+          </p>
+          <p>
+            Meal Type:{" "}
+            {recipe.mealType
+              ?.map((type) => capitalizeFirstLetter(type))
+              .join(", ")}
+          </p>
           <div className={styles.yieldAndTime}>
-            <p>Yield: {recipe.yield} persons</p>
+            <p>Yield: {recipe.yield} people</p>
             <p>Time: {recipe.totalTime} min</p>
           </div>
         </div>
