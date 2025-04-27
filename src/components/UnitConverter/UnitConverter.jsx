@@ -62,31 +62,52 @@ function UnitConverter() {
   return (
     <div>
       <div>
+        <label htmlFor="amount">Amount to convert</label>
         <input
           type="number"
+          id="amount"
           value={amount}
           onChange={handleAmountChange}
           placeholder="Enter amount"
+          aria-describedby="amount-error"
         />
-        <select value={fromUnit} onChange={handleFromUnitChange}>
+        <label htmlFor="fromUnit">From unit</label>
+        <select
+          id="fromUnit"
+          value={fromUnit}
+          onChange={handleFromUnitChange}
+          aria-label="Select the unit to convert from"
+        >
           <option value="cup">Cup</option>
           <option value="tbsp">Tablespoon (tbsp)</option>
           <option value="oz">Ounce (oz)</option>
           <option value="lb">Pound (lb)</option>
         </select>
         <span> to </span>
-        <select value={toUnit} onChange={handleToUnitChange}>
+        <label htmlFor="toUnit">To unit</label>
+        <select
+          id="toUnit"
+          value={toUnit}
+          onChange={handleToUnitChange}
+          aria-label="Select the unit to convert to"
+        >
           <option value="dl">Deciliter (dl)</option>
           <option value="ml">Milliliter (ml)</option>
           <option value="g">Gram (g)</option>
           <option value="kg">Kilogram (kg)</option>
         </select>
       </div>
-      <button onClick={handleConvert}>Convert</button>
+      <button onClick={handleConvert} aria-label="Convert the entered amount">
+        Convert
+      </button>
       <div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && (
+          <p id="amount-error" style={{ color: "red" }} role="alert">
+            {error}
+          </p>
+        )}
         {convertedAmount && !error && (
-          <p>
+          <p aria-live="polite">
             {amount} {fromUnit} is {convertedAmount}.
           </p>
         )}
