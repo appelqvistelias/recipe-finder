@@ -36,6 +36,9 @@ export default function DetailedRecipe({ recipe }) {
           </div>
           <img src={recipe.image} alt={recipe.label} />
           <h2>Ingredients</h2>
+          <a href={recipe.url} target="_blank">
+            Full recipe
+          </a>
           <ul className={styles.ingredientsList}>
             {recipe.ingredientLines.map((line, index) => (
               <li key={index}>{line}</li>
