@@ -41,7 +41,9 @@ export default function DetailedRecipe({ recipe }) {
               ) : null}
             </div>
           </div>
-          <img src={recipe.image} alt={`Image of ${recipe.label}`} />
+          <div className={styles.recipeImg}>
+            <img src={recipe.image} alt={`Image of ${recipe.label}`} />
+          </div>
           <h2>Ingredients</h2>
           <a
             href={recipe.url}
