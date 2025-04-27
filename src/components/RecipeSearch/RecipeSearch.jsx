@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchRecipes } from "../../api/fetchRecipes";
 import MealCard from "../MealCard/MealCard";
+import styles from './Recipe.module.css';
 
 export default function RecipeSearch() {
   const [query, setQuery] = useState("");
@@ -23,29 +24,33 @@ export default function RecipeSearch() {
 
   return (
     <div>
-      <h1>Recipe Finder</h1>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Type ingredient, ex chicken"
-        aria-label="Find recipe"
-      />
-      <button onClick={handleSearch}>Search</button>
+      <section className={styles.searchContainer}>
+        <h1>Recipe Finder</h1>
+        <div className={styles.inputContainer}>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Type ingredient, ex chicken"
+          aria-label="Find recipe"
+        />
+        <button onClick={handleSearch}>Search</button>
+        </div>
 
-      {loading && <p>Loading...</p>}
-
-      <div>
-  {recipes.map((recipe) => (
-    <div 
-      key={recipe.uri} 
-      onClick={() => handleRecipeClick(recipe)} 
-      style={{ cursor: "pointer" }}
-    >
-      <MealCard recipe={recipe} />
-    </div>
-  ))}
-</div>
+        {loading && <p>Loading...</p>}
+      </section>
+      
+      <section className={styles.mealCardGrid}>
+        {recipes.map((recipe) => (
+          <div 
+            key={recipe.uri} 
+            onClick={() => handleRecipeClick(recipe)} 
+            style={{ cursor: "pointer" }}
+          >
+            <MealCard recipe={recipe} />
+          </div>
+        ))}
+      </section>
     </div>
   );
 }
