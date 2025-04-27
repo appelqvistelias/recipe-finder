@@ -8,6 +8,13 @@
    
 }
 
+.searchContainer h1 {
+
+   
+    font-weight: 900;
+    
+}
+
 .searchInput {
 
     
@@ -31,4 +38,25 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
+}
+
+@media (min-width: 769px) {
+
+    .searchInput {
+        width: 50%;
+        max-width: 30rem;;
+    }
+
+    .inputContainer {
+
+        justify-content: center;
+        height: 3rem;
+    }
+
+    .searchContainer h1 {
+
+        font-size: 10rem;
+        text-align: center;
+    }
+    
 }
