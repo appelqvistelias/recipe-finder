@@ -26,6 +26,12 @@ export default function DetailedRecipe({ recipe }) {
           <h2>{recipe.label}</h2>
           </div>
           <div className={styles.recipeContentWrapper}>
+          
+          
+          <div className={styles.recipeImg}>
+            <img src={recipe.image} alt={`Image of ${recipe.label}`} />
+          </div>
+         
           <section className={styles.recipeInfoWrapper}>
           <div className={styles.recipeInfo}>
             <p>
@@ -47,11 +53,6 @@ export default function DetailedRecipe({ recipe }) {
               ) : null}
             </div>
           </div>
-          <div className={styles.recipeImg}>
-            <img src={recipe.image} alt={`Image of ${recipe.label}`} />
-          </div>
-          </section>
-          <section className={styles.recipeInfoWrapper}>
           <h2>Ingredients</h2>
           <a
             href={recipe.url}
@@ -85,6 +86,7 @@ export default function DetailedRecipe({ recipe }) {
           )}
           </section>
           </div>
+          <section className={styles.tagsContainer}>
           <h3>Tags</h3>
           <div className={styles.healthLabels}>
             {recipe.healthLabels?.map((label, index) => (
@@ -93,6 +95,7 @@ export default function DetailedRecipe({ recipe }) {
               </p>
             ))}
           </div>
+          </section>
         </div>
       </div>
       
