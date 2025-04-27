@@ -16,6 +16,7 @@ export default function DetailedRecipe({ recipe }) {
           <button
             className={styles.backButton}
             onClick={() => (window.location.href = "/")}
+            aria-label="Back to home page"
           >
             Back
           </button>
@@ -40,12 +41,17 @@ export default function DetailedRecipe({ recipe }) {
               ) : null}
             </div>
           </div>
-          <img src={recipe.image} alt={recipe.label} />
+          <img src={recipe.image} alt={`Image of ${recipe.label}`} />
           <h2>Ingredients</h2>
-          <a href={recipe.url} target="_blank" rel="noopener noreferrer">
+          <a
+            href={recipe.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View full recipe in a new tab"
+          >
             Full recipe
           </a>
-          <ul className={styles.ingredientsList}>
+          <ul className={styles.ingredientsList} role="list">
             {recipe.ingredientLines.map((line, index) => (
               <li key={index}>{line}</li>
             ))}
@@ -54,7 +60,7 @@ export default function DetailedRecipe({ recipe }) {
           <UnitConverter />
 
           {recipe.totalNutrients && (
-            <div className={styles.nutrients}>
+            <div className={styles.nutrients} aria-live="polite">
               <h3>Nutrients</h3>
               {["CHOCDF", "PROCNT", "FAT"].map((key) => {
                 const nutrient = recipe.totalNutrients[key];
