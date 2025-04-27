@@ -13,6 +13,9 @@ export default function DetailedRecipe({ recipe }) {
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
         <div className={styles.wrapper}>
+          <a href="/" className={styles.backButton}>
+            <button>Back</button>
+          </a>
           <h1>{recipe.label}</h1>
           <div className={styles.recipeInfo}>
             <p>
