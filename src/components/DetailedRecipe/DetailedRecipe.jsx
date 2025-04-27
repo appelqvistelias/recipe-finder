@@ -1,5 +1,22 @@
 import styles from "./DetailedRecipe.module.css";
 
+function convertUnits(unit, amount) {
+  switch (unit?.toLowerCase()) {
+    case "cup":
+      return `${(amount * 2.4).toFixed(1)} dl`;
+    case "tbsp":
+      return `${(amount * 15).toFixed(0)} ml`;
+    case "tsp":
+      return `${(amount * 5).toFixed(0)} ml`;
+    case "oz":
+      return `${(amount * 28.35).toFixed(0)} g`;
+    case "lb":
+      return `${(amount * 0.45).toFixed(2)} kg`;
+    default:
+      return amount && unit ? `${amount} ${unit}` : "";
+  }
+}
+
 export default function DetailedRecipe({ recipe }) {
   return (
     <div className={styles.container}>
