@@ -13,9 +13,12 @@ export default function DetailedRecipe({ recipe }) {
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
         <div className={styles.wrapper}>
-          <a href="/" className={styles.backButton}>
-            <button>Back</button>
-          </a>
+          <button
+            className={styles.backButton}
+            onClick={() => (window.location.href = "/")}
+          >
+            Back
+          </button>
           <h1>{recipe.label}</h1>
           <div className={styles.recipeInfo}>
             <p>
@@ -39,7 +42,7 @@ export default function DetailedRecipe({ recipe }) {
           </div>
           <img src={recipe.image} alt={recipe.label} />
           <h2>Ingredients</h2>
-          <a href={recipe.url} target="_blank">
+          <a href={recipe.url} target="_blank" rel="noopener noreferrer">
             Full recipe
           </a>
           <ul className={styles.ingredientsList}>
