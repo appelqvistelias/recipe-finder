@@ -35,8 +35,9 @@
 
 .mealCardGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 2fr));
     gap: 1rem;
+    padding: 0 5rem;
     width: 100%;
     /* padding: 1rem; */
 }
