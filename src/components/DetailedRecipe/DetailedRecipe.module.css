@@ -32,6 +32,8 @@
 .recipeContentWrapper {
   display: flex;
   flex-direction: column;
+  background-color: var(--main-bg-color);
+  padding: 2rem;
 }
 
 /* Image section */
