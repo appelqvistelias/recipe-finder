@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './MealCard.module.css';
 
-import Button from '../Button/Button';
-
 export default function MealCard({ recipe }) {
   if (!recipe) return null;
 
