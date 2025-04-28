@@ -76,7 +76,7 @@ export default function DetailedRecipe({ recipe }) {
               {recipe.totalNutrients && (
                 <div className={styles.nutrients} aria-live="polite">
                   <h3>Nutrients</h3>
-                  {["CHOCDF", "PROCNT", "FAT"].map((key) => {
+                  {["ENERC_KCAL", "CHOCDF", "PROCNT", "FAT"].map((key) => {
                     const nutrient = recipe.totalNutrients[key];
                     return nutrient ? (
                       <p key={key}>
