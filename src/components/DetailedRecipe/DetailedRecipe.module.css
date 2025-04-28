@@ -34,6 +34,7 @@
   flex-direction: column;
   background-color: var(--main-bg-color);
   padding: 2rem;
+  border: solid 0.5rem;
 }
 
 /* Image section */
@@ -41,7 +42,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
-  border: 0.5rem solid;
+  /* border: 0.5rem solid; */
 }
 
 .recipeImg img {
@@ -118,7 +119,7 @@
     width: 50%;
     aspect-ratio: 4/3;
     overflow: hidden;
-    border: 1rem solid;
+    border: 0.3rem solid;
     margin-bottom: 0rem;
   }
 
