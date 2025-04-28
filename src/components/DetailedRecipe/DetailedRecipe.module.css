@@ -15,6 +15,12 @@
   padding: 1.5rem;
 }
 
+.yieldAndTime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* Recipe header */
 .recipeHeader {
   display: flex;
@@ -72,16 +78,23 @@
   list-style-type: none;
 }
 
+.fullRecipe {
+  text-decoration: none;
+  color: var(--main-accent-color);
+  font-weight: 900;
+}
+
+.fullRecipe:hover {
+  text-decoration: underline;
+  color: var(--secondary-accent-color);
+}
+
 /* Nutrients section */
 .nutrients {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-
-
-
-
 
 /* Media query for desktop */
 @media (min-width: 769px) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Button from "../Button/Button";
 import styles from "./UnitConverter.module.css";
 
@@ -30,6 +30,14 @@ function UnitConverter() {
   const [convertedAmount, setConvertedAmount] = useState("");
   const [error, setError] = useState("");
 
+  const errorRef = useRef(null);
+
+  useEffect(() => {
+    if (error && errorRef.current) {
+      errorRef.current.focus();
+    }
+  }, [error]);
+
   const handleAmountChange = (e) => {
     const value = e.target.value;
     if (value === "" || !isNaN(value)) {
@@ -59,58 +67,65 @@ function UnitConverter() {
   };
 
   return (
-    <div>
+    <>
       <div className={styles.unitConverterContainer}>
-        <div className={styles.converterField}>
-        <label htmlFor="amount">Amount to convert</label>
-        <input
-          type="number"
-          id="amount"
-          value={amount}
-          onChange={handleAmountChange}
-          placeholder="Enter amount"
-          aria-describedby="amount-error"
+        <div className={styles.labelAndInput}>
+          <label htmlFor="amount">Amount to convert:</label>
+          <input
+            className={styles.inputField}
+            type="number"
+            id="amount"
+            value={amount}
+            onChange={handleAmountChange}
+            placeholder="Enter amount"
+            aria-describedby="amount-error"
+            aria-invalid={error ? "true" : "false"}
+          />
+        </div>
+        <div className={styles.labelAndInput}>
+          <label htmlFor="fromUnit">From unit:</label>
+          <select
+            className={styles.inputField}
+            id="fromUnit"
+            value={fromUnit}
+            onChange={handleFromUnitChange}
+            aria-label="Select the unit to convert from"
+          >
+            <option value="cup">Cup</option>
+            <option value="tbsp">Tablespoon (tbsp)</option>
+            <option value="oz">Ounce (oz)</option>
+            <option value="lb">Pound (lb)</option>
+            <option value="inch">Inch (in)</option>
+          </select>
+        </div>
+        <Button
+          onClick={handleConvert}
+          aria-label="Convert the entered amount"
+          title="convert"
+          size="small"
         />
+        <div>
+          {error && (
+            <p
+              id="amount-error"
+              ref={errorRef}
+              style={{ color: "red" }}
+              role="alert"
+              tabIndex="-1"
+            >
+              {error}
+            </p>
+          )}
+          {convertedAmount && !error && (
+            <div className={styles.converterFeedback}>
+              <p aria-live="polite">
+                {amount} {fromUnit} is {convertedAmount}.
+              </p>
+            </div>
+          )}
         </div>
-        <div className={styles.converterField}>
-        <label htmlFor="fromUnit">From unit</label>
-        <select
-          id="fromUnit"
-          value={fromUnit}
-          onChange={handleFromUnitChange}
-          aria-label="Select the unit to convert from"
-        >
-          <option value="cup">Cup</option>
-          <option value="tbsp">Tablespoon (tbsp)</option>
-          <option value="oz">Ounce (oz)</option>
-          <option value="lb">Pound (lb)</option>
-          <option value="inch">Inch (in)</option>
-        </select>
-        </div>
-      
-      <Button 
-      onClick={handleConvert} 
-      aria-label="Convert the entered amount"  
-      title="convert"
-      size="small"
-      >
-        
-      </Button>
-      
-      <div>
-        {error && (
-          <p id="amount-error" style={{ color: "red" }} role="alert">
-            {error}
-          </p>
-        )}
-        {convertedAmount && !error && (
-          <p aria-live="polite">
-            {amount} {fromUnit} is {convertedAmount}.
-          </p>
-        )}
       </div>
-      </div>
-    </div>
+    </>
   );
 }
 
