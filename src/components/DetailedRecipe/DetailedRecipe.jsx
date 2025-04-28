@@ -58,6 +58,7 @@ export default function DetailedRecipe({ recipe }) {
               </div>
               <h2>Ingredients</h2>
               <a
+                className={styles.fullRecipe}
                 href={recipe.url}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -78,6 +78,17 @@
   list-style-type: none;
 }
 
+.fullRecipe {
+  text-decoration: none;
+  color: var(--main-accent-color);
+  font-weight: 900;
+}
+
+.fullRecipe:hover {
+  text-decoration: underline;
+  color: var(--secondary-accent-color);
+}
+
 /* Nutrients section */
 .nutrients {
   display: flex;
