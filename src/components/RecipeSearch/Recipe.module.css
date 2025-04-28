@@ -2,17 +2,33 @@
 .searchContainer {
     display: flex;
     flex-direction: column;
+   
+   
     gap: 0.5rem;
     margin-bottom: 2rem;
+   
+    
     
    
 }
 
-.searchContainer h1 {
+.title h1 {
 
-   
-    font-weight: 900;
     
+    font-weight: 900; 
+}
+
+.title {
+    display: inline-flex; /* Changed from flex to inline-flex */
+    border: solid var(--main-accent-color);
+    border-width: 1rem; /* Separate the border property */
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    width: fit-content; /* This makes it only as wide as its content */
+    margin-left: auto; /* These two margin properties will center it horizontally */
+    margin-right: auto;
 }
 
 .searchInput {
@@ -20,8 +36,12 @@
     
     display: flex;
     border-radius: 0.5rem;
+    border-color: var(--main-accent-color);
     padding-left: 0.5rem;
     width: 100%;
+    
+    max-width: 59rem;
+    
 
     
     
@@ -31,7 +51,8 @@
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-
+   
+   
 }
 
 .mealCardGrid {
@@ -45,15 +66,21 @@
 
 @media (min-width: 769px) {
 
-    .searchInput {
-        width: 50%;
-        max-width: 30rem;;
+    .title{
+       
+        border: solid 1.5rem;
+       
+        border-color: var(--main-accent-color);
+        padding: 1rem;
+        font-size: 5rem;
+        
+      
     }
 
     .inputContainer {
 
         justify-content: center;
-        height: 3rem;
+        height: 4rem;
     }
 
     .mealCardGrid {

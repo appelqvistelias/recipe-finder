@@ -1,5 +1,6 @@
 import styles from "./DetailedRecipe.module.css";
 import UnitConverter from "../UnitConverter/UnitConverter";
+import Button from "../Button/Button";
 
 export default function DetailedRecipe({ recipe }) {
   const capitalizeFirstLetter = (str) => {
@@ -13,35 +14,46 @@ export default function DetailedRecipe({ recipe }) {
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
         <div className={styles.wrapper}>
-          <button
-            className={styles.backButton}
-            onClick={() => (window.location.href = "/")}
-            aria-label="Back to home page"
-          >
-            Back
-          </button>
-          <h1>{recipe.label}</h1>
-          <div className={styles.recipeInfo}>
-            <p>
-              Cuisine Type:{" "}
-              {recipe.cuisineType
-                ?.map((type) => capitalizeFirstLetter(type))
-                .join(", ")}
-            </p>
-            <p>
-              Meal Type:{" "}
-              {recipe.mealType
-                ?.map((type) => capitalizeFirstLetter(type))
-                .join(", ")}
-            </p>
-            <div className={styles.yieldAndTime}>
-              <p>Yield: {recipe.yield} people</p>
-              {recipe.totalTime && recipe.totalTime > 0 ? (
-                <p>Time: {recipe.totalTime} min</p>
-              ) : null}
-            </div>
+        <Button 
+          onClick={() => (window.location.href = "/")}
+          aria-label="Back to home page"
+          title="back"
+
+        >
+          Back
+        </Button>
+
+        <div className={styles.recipeHeader}>
+          <h2>{recipe.label}</h2>
           </div>
-          <img src={recipe.image} alt={`Image of ${recipe.label}`} />
+          <div className={styles.recipeContentWrapper}>
+          
+          
+          <div className={styles.recipeImg}>
+            <img src={recipe.image} alt={`Image of ${recipe.label}`} />
+          </div>
+         
+          <section className={styles.recipeInfoWrapper}>
+          <div className={styles.recipeInfo}>
+    <p>
+      <strong>Cuisine Type:</strong>{" "}
+      {recipe.cuisineType
+        ?.map((type) => capitalizeFirstLetter(type))
+        .join(", ")}
+    </p>
+    <p>
+      <strong>Meal Type:</strong>{" "}
+      {recipe.mealType
+        ?.map((type) => capitalizeFirstLetter(type))
+        .join(", ")}
+    </p>
+    <div className={styles.yieldAndTime}>
+      <p><strong>Yield:</strong> {recipe.yield} people</p>
+      {recipe.totalTime && recipe.totalTime > 0 ? (
+        <p><strong>Time:</strong> {recipe.totalTime} min</p>
+      ) : null}
+    </div>
+  </div>
           <h2>Ingredients</h2>
           <a
             href={recipe.url}
@@ -66,13 +78,16 @@ export default function DetailedRecipe({ recipe }) {
                 const nutrient = recipe.totalNutrients[key];
                 return nutrient ? (
                   <p key={key}>
-                    {nutrient.label}: {Math.round(nutrient.quantity)}{" "}
-                    {nutrient.unit}
+                  <strong>{nutrient.label}:</strong> {Math.round(nutrient.quantity)}{" "}
+                  {nutrient.unit}
                   </p>
                 ) : null;
               })}
             </div>
           )}
+          </section>
+          </div>
+          <section className={styles.tagsContainer}>
           <h3>Tags</h3>
           <div className={styles.healthLabels}>
             {recipe.healthLabels?.map((label, index) => (
@@ -81,8 +96,11 @@ export default function DetailedRecipe({ recipe }) {
               </p>
             ))}
           </div>
+          </section>
         </div>
       </div>
+      
     </div>
+    
   );
 }

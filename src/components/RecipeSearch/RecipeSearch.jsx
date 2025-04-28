@@ -25,8 +25,11 @@ export default function RecipeSearch() {
 
   return (
     <div>
-      <section className={styles.searchContainer}>
+      <main>
+        <div className={styles.title}>
         <h1>recipe finder</h1>
+        </div>
+      <section className={styles.searchContainer}>
         <div className={styles.inputContainer}>
         <input
         className={styles.searchInput}
@@ -36,7 +39,7 @@ export default function RecipeSearch() {
           placeholder="Type ingredient, ex chicken"
           aria-label="Find recipe"
         />
-        <Button title="Search" onClick={handleSearch} />
+        <Button title="search" onClick={handleSearch} />
         </div>
 
         {loading && <p>Loading...</p>}
@@ -53,6 +56,7 @@ export default function RecipeSearch() {
           </div>
         ))}
       </section>
+      </main>
     </div>
   );
 }

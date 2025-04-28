@@ -1,14 +1,17 @@
 .button {
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--main-accent-color);
+  color: var(--secondary-typography-color);
   font-weight: bold;
-  font-size: 0.75rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.5rem;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
+  border: solid 3px var(--main-typography-color);
+  
 }
 
 .button:hover {
-  background-color: #45a049;
+  
+  opacity: 0.8;
+
 }
