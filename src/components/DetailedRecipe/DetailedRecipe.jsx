@@ -19,6 +19,7 @@ export default function DetailedRecipe({ recipe }) {
           onClick={() => (window.location.href = "/")}
           aria-label="Back to home page"
           title="back"
+          size="large"
           style={{ marginTop: '1em', }}
         >
           Back to Home

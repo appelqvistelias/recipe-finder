@@ -29,22 +29,25 @@ export default function RecipeSearch() {
         <div className={styles.title}>
         <h1>recipe finder</h1>
         </div>
-      <section className={styles.searchContainer}>
-        <div className={styles.inputContainer}>
-        <input
-        className={styles.searchInput}
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Type ingredient, ex chicken"
-          aria-label="Find recipe"
-        />
-        <Button title="search" onClick={handleSearch} />
-        </div>
+        <section className={styles.searchContainer}>
+          <div className={styles.inputContainer}>
+            <input
+              className={styles.searchInput}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Type ingredient, ex chicken"
+              aria-label="Find recipe"
+            />
+          </div>
+          <div className={styles.buttonContainer}>
+            <Button title="search" onClick={handleSearch} size="large" />
+          </div>
+        </section>
         <div className={styles.loading}>
         {loading && <p>Loading...</p>}
         </div>
-      </section>
+     
       
       <section className={styles.mealCardGrid}>
         {recipes.map((recipe) => (

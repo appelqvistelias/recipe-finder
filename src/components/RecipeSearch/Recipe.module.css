@@ -2,14 +2,8 @@
 .searchContainer {
     display: flex;
     flex-direction: column;
-   
-   
     gap: 0.5rem;
-    margin-bottom: 2rem;
-   
-    
-    
-   
+    margin: 2rem 2rem;
 }
 
 .loading {
@@ -47,19 +41,17 @@
     border-color: var(--main-typography-color);
     padding-left: 0.5rem;
     width: 100%;
-    
-    max-width: 59rem;
-    
-
-    
-    
+    height: 8rem;
+    font-size: 4rem;
+   
 }
 .inputContainer {
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 0.5rem;
     justify-content: center;
+    
    
    
 }
@@ -85,23 +77,9 @@
         
       
     }
-
-    .inputContainer {
-
-        justify-content: center;
-        height: 4rem;
-    }
-
     .mealCardGrid {
 
         padding: 0 5rem;
-
-    }
-
-    .searchContainer h1 {
-
-        font-size: 10rem;
-        text-align: center;
     }
     
 }
