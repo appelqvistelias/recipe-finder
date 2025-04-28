@@ -134,6 +134,7 @@
     aspect-ratio: 4/3;
     overflow: hidden;
     border: 1rem solid;
+    margin-bottom: 0rem;
   }
 
   .recipeImg img {
