@@ -2,16 +2,40 @@
   background-color: var(--main-accent-color);
   color: var(--secondary-typography-color);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   padding: 0.5rem 0.5rem;
   border: none;
   cursor: pointer;
   border: solid 3px var(--main-typography-color);
-  
 }
 
 .button:hover {
-  
   opacity: 0.8;
+}
 
+.small {
+  font-size: 1.4rem;
+  padding: 0.3rem 0.3rem;
+}
+
+.medium {
+  font-size: 2.2rem;
+  padding: 0.5rem 0.5rem;
+}
+
+.large {
+  font-size: 3rem;
+  padding: 0.7rem 1rem;
+}
+
+.xlarge {
+  font-size: 5rem;
+}
+
+.normalWidth {
+  width: auto;
+}
+
+.fullWidth {
+  width: 100%;
 }
