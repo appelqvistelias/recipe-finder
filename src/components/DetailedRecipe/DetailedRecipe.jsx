@@ -1,6 +1,7 @@
 import styles from "./DetailedRecipe.module.css";
 import UnitConverter from "../UnitConverter/UnitConverter";
 import Button from "../Button/Button";
+import Tags from "../Tags/Tags";
 
 export default function DetailedRecipe({ recipe }) {
   const capitalizeFirstLetter = (str) => {
@@ -87,16 +88,11 @@ export default function DetailedRecipe({ recipe }) {
           )}
           </section>
           </div>
-          <section className={styles.tagsContainer}>
-          <h3>Tags</h3>
-          <div className={styles.healthLabels}>
-            {recipe.healthLabels?.map((label, index) => (
-              <p key={index} className={styles.healthLabelTag}>
-                {label}
-              </p>
-            ))}
-          </div>
-          </section>
+          <Tags 
+            title="Tags" 
+            tags={recipe.healthLabels} 
+            tagClassName={styles.healthLabelTag} 
+          />
         </div>
       </div>
       
