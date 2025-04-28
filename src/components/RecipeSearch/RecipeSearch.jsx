@@ -41,7 +41,12 @@ export default function RecipeSearch() {
             />
           </div>
           <div className={styles.buttonContainer}>
-            <Button title="search" onClick={handleSearch} size="large" />
+            <Button
+              title="search"
+              onClick={handleSearch}
+              size="large"
+              width="fullWidth"
+            />
           </div>
         </section>
         <div className={styles.loading}>{loading && <p>Loading...</p>}</div>

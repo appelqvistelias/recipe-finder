@@ -31,3 +31,11 @@
 .xlarge {
   font-size: 5rem;
 }
+
+.normalWidth {
+  width: auto;
+}
+
+.fullWidth {
+  width: 100%;
+}
