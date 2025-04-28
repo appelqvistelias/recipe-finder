@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Button from "../Button/Button";
 import styles from "./UnitConverter.module.css";
 
@@ -29,6 +29,14 @@ function UnitConverter() {
   const [fromUnit, setFromUnit] = useState("cup");
   const [convertedAmount, setConvertedAmount] = useState("");
   const [error, setError] = useState("");
+
+  const errorRef = useRef(null);
+
+  useEffect(() => {
+    if (error && errorRef.current) {
+      errorRef.current.focus();
+    }
+  }, [error]);
 
   const handleAmountChange = (e) => {
     const value = e.target.value;
@@ -71,6 +79,7 @@ function UnitConverter() {
             onChange={handleAmountChange}
             placeholder="Enter amount"
             aria-describedby="amount-error"
+            aria-invalid={error ? "true" : "false"}
           />
         </div>
         <div className={styles.labelAndInput}>
@@ -97,7 +106,13 @@ function UnitConverter() {
         />
         <div>
           {error && (
-            <p id="amount-error" style={{ color: "red" }} role="alert">
+            <p
+              id="amount-error"
+              ref={errorRef}
+              style={{ color: "red" }}
+              role="alert"
+              tabIndex="-1"
+            >
               {error}
             </p>
           )}
