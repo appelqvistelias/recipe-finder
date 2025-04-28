@@ -15,6 +15,12 @@
   padding: 1.5rem;
 }
 
+.yieldAndTime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* Recipe header */
 .recipeHeader {
   display: flex;
@@ -78,10 +84,6 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-
-
-
-
 
 /* Media query for desktop */
 @media (min-width: 769px) {
