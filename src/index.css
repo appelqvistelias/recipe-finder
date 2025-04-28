@@ -1,5 +1,38 @@
+:root {
+
+  --main-bg-color: #FAE6BB;
+  --main-accent-color: #E73413;
+  --main-typography-color: #110D0A;
+  --secondary-typography-color: #FBEEE4;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+  
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+ 
+
+body {
+  background: var(--main-bg-color);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem; /* 16px font-size standard */
+  padding: 1.5rem;
+
+}
+
+main {
+
+  display: flex;
+  flex-direction: column;
 }

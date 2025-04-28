@@ -1,14 +1,16 @@
-import "./App.css";
-import Button from "./components/Button";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import RecipePage from "./pages/RecipePage";
 
 function App() {
   return (
-    <Button
-      title="Click me!"
-      onClick={() => {
-        alert("Hello there!");
-      }}
-    />
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recipe" element={<RecipePage />} />
+      </Routes>
+    </Router>
   );
 }
 
