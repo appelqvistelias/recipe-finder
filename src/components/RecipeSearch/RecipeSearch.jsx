@@ -11,10 +11,17 @@ export default function RecipeSearch() {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
+    if (!query) return;
     setLoading(true);
     const results = await fetchRecipes(query);
     setRecipes(results);
     setLoading(false);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   const navigate = useNavigate();
@@ -38,6 +45,7 @@ export default function RecipeSearch() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Type ingredient, ex chicken"
               aria-label="Find recipe"
+              onKeyDown={handleKeyDown}
             />
           </div>
           <div className={styles.buttonContainer}>
