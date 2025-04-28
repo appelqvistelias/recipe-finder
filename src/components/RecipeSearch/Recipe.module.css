@@ -12,6 +12,14 @@
    
 }
 
+.loading {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+
 .title h1 {
 
     
@@ -33,10 +41,9 @@
 
 .searchInput {
 
-    
+    border: solid 0.4rem;
     display: flex;
-    border-radius: 0.5rem;
-    border-color: var(--main-accent-color);
+    border-color: var(--main-typography-color);
     padding-left: 0.5rem;
     width: 100%;
     

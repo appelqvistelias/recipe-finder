@@ -41,8 +41,9 @@ export default function RecipeSearch() {
         />
         <Button title="search" onClick={handleSearch} />
         </div>
-
+        <div className={styles.loading}>
         {loading && <p>Loading...</p>}
+        </div>
       </section>
       
       <section className={styles.mealCardGrid}>

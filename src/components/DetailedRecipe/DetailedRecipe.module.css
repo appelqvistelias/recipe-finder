@@ -20,6 +20,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .recipeHeader h2 {
@@ -38,6 +39,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  border: 0.5rem solid;
 }
 
 .recipeImg img {
@@ -131,6 +133,7 @@
     width: 50%;
     aspect-ratio: 4/3;
     overflow: hidden;
+    border: 1rem solid;
   }
 
   .recipeImg img {
