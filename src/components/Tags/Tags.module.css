@@ -6,6 +6,12 @@
     gap: 1rem;
   }
 
+  .tagsContainer h3 {
+
+    color: var(--secondary-typography-color);
+    font-size: 3rem;
+  }
+
   .healthLabels {
     display: flex;
     flex-wrap: wrap;

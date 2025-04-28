@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
+import styles from "./UnitConverter.module.css";
 
 function unitConverter(fromUnit, amount) {
   const conversions = {
@@ -58,7 +60,8 @@ function UnitConverter() {
 
   return (
     <div>
-      <div>
+      <div className={styles.unitConverterContainer}>
+        <div className={styles.converterField}>
         <label htmlFor="amount">Amount to convert</label>
         <input
           type="number"
@@ -68,6 +71,8 @@ function UnitConverter() {
           placeholder="Enter amount"
           aria-describedby="amount-error"
         />
+        </div>
+        <div className={styles.converterField}>
         <label htmlFor="fromUnit">From unit</label>
         <select
           id="fromUnit"
@@ -81,10 +86,17 @@ function UnitConverter() {
           <option value="lb">Pound (lb)</option>
           <option value="inch">Inch (in)</option>
         </select>
-      </div>
-      <button onClick={handleConvert} aria-label="Convert the entered amount">
-        Convert
-      </button>
+        </div>
+      
+      <Button 
+      onClick={handleConvert} 
+      aria-label="Convert the entered amount"  
+      title="convert"
+      size="small"
+      >
+        
+      </Button>
+      
       <div>
         {error && (
           <p id="amount-error" style={{ color: "red" }} role="alert">
@@ -96,6 +108,7 @@ function UnitConverter() {
             {amount} {fromUnit} is {convertedAmount}.
           </p>
         )}
+      </div>
       </div>
     </div>
   );
