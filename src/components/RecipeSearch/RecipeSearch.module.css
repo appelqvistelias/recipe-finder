@@ -1,0 +1,74 @@
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 2rem 2rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.title h1 {
+  font-weight: 900;
+}
+
+.title {
+  display: inline-flex; /* Changed from flex to inline-flex */
+  border: solid var(--main-accent-color);
+  border-width: 1rem; /* Separate the border property */
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: fit-content; /* This makes it only as wide as its content */
+  margin-left: auto; /* These two margin properties will center it horizontally */
+  margin-right: auto;
+}
+
+.searchInput {
+  border: solid 0.4rem;
+  display: flex;
+  border-color: var(--main-typography-color);
+  padding-left: 0.5rem;
+  width: 100%;
+  height: 5rem;
+  font-weight: 900;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.mealCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 2fr));
+  gap: 0.7rem;
+  padding: 0rem 0rem;
+  width: 100%;
+  /* padding: 1rem; */
+}
+
+@media (min-width: 769px) {
+  .title {
+    border: solid 1.5rem;
+
+    border-color: var(--main-accent-color);
+    padding: 1rem;
+    font-size: 5rem;
+  }
+  .mealCardGrid {
+    padding: 0 5rem;
+  }
+
+  .searchInput {
+    height: 8rem;
+    font-size: 4rem;
+  }
+}
