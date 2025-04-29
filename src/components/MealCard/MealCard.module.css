@@ -41,21 +41,19 @@
     object-fit: cover;
 }
 
-/* Media Queries */
-@media (min-width: 768px) {
-    /* Commented out desktop styles preserved as-is */
-    /* .mealCard {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 52rem;
-    }
-
-    .mealInfo {
-        justify-content: center;
-        gap: 2rem;
-    }
-
-    .imgContainer {
-        width: 50%;
-    } */
-}
+.mealCard:focus {
+    outline: 2px solid var(--main-typography-color); /* A visible focus outline */
+    outline-offset: 2px;
+    box-shadow: var(--main-typography-color) /* Creates a nice focus effect */
+  }
+  
+  /* Add keyboard focus styles without affecting mouse users */
+  .mealCard:focus-visible {
+    outline: 2px solid var(--main-typography-color);
+    outline-offset: 2px;
+  }
+  
+  /* Remove outline for mouse users */
+  .mealCard:focus:not(:focus-visible) {
+    outline: none;
+  }

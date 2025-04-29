@@ -60,13 +60,15 @@ export default function RecipeSearch() {
         <div className={styles.loading}>{loading && <p>Loading...</p>}</div>
 
         <section className={styles.mealCardGrid}>
-          {recipes.map((recipe) => (
+        {recipes.map((recipe) => (
             <div
               key={recipe.uri}
-              onClick={() => handleRecipeClick(recipe)}
               style={{ cursor: "pointer" }}
             >
-              <MealCard recipe={recipe} />
+              <MealCard 
+                recipe={recipe}
+                onSelect={() => handleRecipeClick(recipe)}
+              />
             </div>
           ))}
         </section>
